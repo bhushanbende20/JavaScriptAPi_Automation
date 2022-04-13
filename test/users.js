@@ -58,8 +58,9 @@ describe('Webserives Trial Testing', () => {
             method: 'GET'
         }
         var getdata = hitwebservices.getResponse("GET", URL, options);
-        console.log(JSON.stringify(getdata, null, 2));
+        //console.log(JSON.stringify(getdata, null, 2));
 
+        console.log(getdata.body);
        
 
     }
