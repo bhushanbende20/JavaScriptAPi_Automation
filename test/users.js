@@ -61,6 +61,12 @@ describe('Webserives Trial Testing', () => {
         //console.log(JSON.stringify(getdata, null, 2));
 
         console.log(getdata.body);
+
+        // if(getdata.body.hasOwnProperty("id")){
+        //     console.log("has id") ;        
+        // }
+        expect(getdata.body.hasOwnProperty("id")).to.be.equal(true);
+
        
 
     }
