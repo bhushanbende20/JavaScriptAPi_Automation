@@ -3,13 +3,15 @@ const fs = require("fs");
 const it = require("mocha").it;
 const expect = require("chai").expect;
 const config = require("../config/config.json");
-const user = require("../test/users.js");
+const user = require("./users.js");
 const hitwebservices = require("../API_Framework/hitWebAPI");
 //const testData = fs.readFileSync("../test/testcase.json",'utf8');
 var testDatafile = require("../test/testcase.json");
 var testData = testDatafile.testData;
 const MyEmitter = new EventEmitter();
-const addcontext = require("mocha")
+const addcontext = require("mocha");
+const { assert } = require("console");
+
 
 describe('Webserives Trial Testing', () => {
 
@@ -23,7 +25,7 @@ describe('Webserives Trial Testing', () => {
 
     });
 
-    function abc(data) {
+    function abc(data) { 
         it("Testing", function () {
             console.log(data)
 
@@ -52,6 +54,10 @@ describe('Webserives Trial Testing', () => {
     module.exports.getUSers = function (id) {
 
 
+
+
+
+
         var URL = config.url + config.path + "/" + id + "?access-token=" + config.token;
 
         const options = {
@@ -62,10 +68,9 @@ describe('Webserives Trial Testing', () => {
 
         console.log(getdata.body);
 
-        // if(getdata.body.hasOwnProperty("id")){
-        //     console.log("has id") ;        
-        // }
-        expect(getdata.body.hasOwnProperty("id")).to.be.equal(true);
+         expect(getdata.body.hasOwnProperty("id")).to.be.equal(true);
+         console.log(getdata.body.name);
+
 
        
 
